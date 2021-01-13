@@ -16,3 +16,5 @@ Actualmente está conectado a un cluster en MongoDBAtlas, para cambiar la config
 
 ## Nueva instalación:
 npm init
+
+## Desplegar en Heroku	
