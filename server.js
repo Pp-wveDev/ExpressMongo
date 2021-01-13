@@ -6,6 +6,8 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const bodyparser = require('body-parser');
 
+const port = process.env.PORT || 3000;
+
 // Controladores
 const employeeController = require('./controllers/employeeController');
 const mainController = require('./controllers/mainController');
@@ -29,7 +31,7 @@ app.engine('hbs', exphbs({
 app.set('view engine', 'hbs');
 
 // Encendemos server
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Express server started at port: 3000');
 });
 
