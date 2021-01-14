@@ -11,6 +11,8 @@ const port = process.env.PORT || 3000;
 // Controladores
 const employeeController = require('./controllers/employeeController');
 const mainController = require('./controllers/mainController');
+const tutorialController = require('./controllers/tutorialController');
+const oauthController = require('./controllers/oauthController');
 
 // Iniciamos aplicación
 var app = express();
@@ -20,8 +22,9 @@ app.use(bodyparser.urlencoded({
     extended: true
 }));
 app.use(bodyparser.json());
+app.use(express.json());
 
-// Establecemeos vista predeterminada
+// Establecemos vista predeterminada
 app.set('views', path.join(__dirname, '/views/'));
 app.engine('hbs', exphbs({
     extname: 'hbs',
@@ -37,4 +40,6 @@ app.listen(port, () => {
 
 // Registramos rutas
 app.use('/employee', employeeController);
+app.use('/tutorial', tutorialController);
+app.use('/oauth', oauthController);
 app.use('/', mainController);

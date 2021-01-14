@@ -18,3 +18,9 @@ Actualmente está conectado a un cluster en MongoDBAtlas, para cambiar la config
 npm init
 
 ## Desplegar en Heroku	
+seguir pasos
+
+## if elses
+{{#if condicion}}
+{{else}}
+{{/if}}

@@ -13,3 +13,5 @@ mongoose.connect(uri, {
 });
 
 require('./employee.model');
+require('./tutorial.model');
+require('./comment.model');
