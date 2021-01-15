@@ -15,3 +15,6 @@ mongoose.connect(uri, {
 require('./employee.model');
 require('./tutorial.model');
 require('./comment.model');
+
+require('./imagen.model');
+require('./usuario.model');
