@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
     //var rImg = req.body.img;
     delete req;
     console.log("ok");
-    res.redirect('back');
+    res.redirect('/');
 });
 
 module.exports = router;

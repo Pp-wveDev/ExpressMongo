@@ -15,7 +15,7 @@ var employeeSchema = new mongoose.Schema({
     city: {
         type: String
     },
-}, { collection: 'test_employee' });
+}, { collection: 'test_employee', timestamps: true });
 
 // Custom validation for email
 employeeSchema.path('email').validate((val) => {

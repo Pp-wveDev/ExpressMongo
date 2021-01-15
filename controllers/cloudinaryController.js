@@ -12,13 +12,47 @@ const storage = multer.diskStorage({
     }
 });
 
-
-// Upload a photo
+// Gets
+// ---------------------------------------------------------------------------------
 router.get('/', (req, res) => {
     res.render('cloudinary/upload');
-})
+});
+router.get('/url', (req, res) => {
+    res.render('cloudinary/getUrl');
+});
+// ---------------------------------------------------------------------------------
+
+
+const cloudinary = require('cloudinary').v2;
+cloudinary.config({
+    cloud_name: "derd50bql",
+    api_key: "149897356334735",
+    api_secret: "eq6PWmskRHl6wrkDxg61VIIBKxQ"
+});
+
+router.post('/url', (req, res) => {
+    var filename = req.body.name;
+    var url = req.body.url;
+
+    cloudinary.uploader.upload(url, {
+        public_id: filename,
+        tags: 'tercerParcial'
+    }, (err, img) => {
+        if (err) {
+            res.send(err);
+        }
+
+        const urlPhoto = img.secure_url;
+
+        res.render('cloudinary/showImage', {
+            imgUrl: urlPhoto
+        });
+    });
+});
+
 
 // Post to cloudinary
+// WARNING: Just works on local
 router.post('/', (req, res) => {
     const upload = multer({ storage }).single('img')
     upload(req, res, function(err) {
