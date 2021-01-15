@@ -9,6 +9,9 @@ Mediante la terminal, tendrá que instalar:
 2. npm i express-handlebars
 3. npm i mongoose
 4. npm i body-parser
+5. npm i multer
+6. npm i cloudinary
+7. npm i googleapis
 
 Finalmente, para ejecutar el proyecto: node server.js
 

@@ -13,6 +13,8 @@ const employeeController = require('./controllers/employeeController');
 const mainController = require('./controllers/mainController');
 const tutorialController = require('./controllers/tutorialController');
 const oauthController = require('./controllers/oauthController');
+const cloudinaryController = require('./controllers/cloudinaryController');
+const weatherController = require('./controllers/weatherController');
 
 // Iniciamos aplicación
 var app = express();
@@ -42,4 +44,6 @@ app.listen(port, () => {
 app.use('/employee', employeeController);
 app.use('/tutorial', tutorialController);
 app.use('/oauth', oauthController);
+app.use('/cloud', cloudinaryController);
+app.use('/weather', weatherController);
 app.use('/', mainController);
